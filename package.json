@@ -1,0 +1,16 @@
+{
+  "name": "serverless-api",
+  "version": "1.0.0",
+  "description": "In AWS DynamoDB, you have two options for creating a table: you can either create the table manually through the AWS Management Console or use code (like the Dynamoose schema provided earlier) to create the table programmatically.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "aws-sdk": "^2.1421.0",
+    "dynamoose": "^3.2.0"
+  }
+}
