@@ -1,10 +1,10 @@
 const personModel = require('../schema');
 
 exports.handler = async (event) => {
-  const { title, author, publicationYear } = JSON.parse(event.body);
+  const { name, age } = JSON.parse(event.body);
 
   try {
-    const person = new personModel({ title, author, publicationYear }); //غيريهم
+    const person = new personModel({ name, age }); //غيريهم
     await person.save();
     return {
       statusCode: 200,

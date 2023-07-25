@@ -5,19 +5,15 @@ const personSchema = new dynamoose.Schema({
     type: String,
     // hashKey: true, // Partition key
   },
-  title: {
+  name: {
     type: String,
     // required: true,
   },
-  author: {
+  age: {
     type: String,
     // required: true,
   },
-  publicationYear: {
-    type: Number,
-    // required: true,
-  },
-}); //غيري البروبيرتي
+}); 
 
 const personModel = dynamoose.model('Person', personSchema);
 
