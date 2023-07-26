@@ -1,11 +1,11 @@
-const personModel = require('../schema');
+const personModel = require('./schema');
 
 exports.handler = async (event) => {
   const { id } = event.pathParameters;
-  const { name, age } = JSON.parse(event.body);
+  const { name } = JSON.parse(event.body);
 
   try {
-    const person = await personModel.update({ id, name, age });
+    const person = await personModel.update({ id, name });
     return {
       statusCode: 200,
       body: JSON.stringify(person),

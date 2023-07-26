@@ -1,13 +1,12 @@
-const personModel = require('../schema');
+const personModel = require('./schema');
 
 exports.handler = async (event) => {
-  const { name, age } = JSON.parse(event.body);
+  const { name} = JSON.parse(event.body);
 
   try {
-    const person = new personModel({ name, age }); //غيريهم
-    await person.save();
+    const person = await personModel.create({ name});
     return {
-      statusCode: 200,
+      statusCode: 201, // 201 Created status code for successful creation
       body: JSON.stringify(person),
     };
   } catch (error) {

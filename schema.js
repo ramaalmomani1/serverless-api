@@ -9,10 +9,6 @@ const personSchema = new dynamoose.Schema({
     type: String,
     // required: true,
   },
-  age: {
-    type: String,
-    // required: true,
-  },
 }); 
 
 const personModel = dynamoose.model('Person', personSchema);

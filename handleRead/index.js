@@ -1,4 +1,7 @@
-const personModel = require('../schema');
+
+const personModel = require('./schema');
+
+
 
 exports.handler = async (event) => {
   const { id } = event.pathParameters;
