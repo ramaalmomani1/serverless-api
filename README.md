@@ -1,14 +1,50 @@
 # serverless-api
 
-In AWS DynamoDB, you have two options for creating a table: you can either create the table manually through the AWS Management Console or use code (like the Dynamoose schema provided earlier) to create the table programmatically.
+----
 
-The code I provided using Dynamoose will automate the table creation process for you, but it will only create the table if you perform any operations (e.g., read, write, scan) using the model defined in the code. The table creation happens on-the-fly when you first use the model to interact with the table.
+**UML:**
 
-So, if you choose to use the Dynamoose code, you don't need to manually create the table using the AWS Management Console. The code will handle the table creation for you, as long as you have the appropriate AWS credentials and permissions to create tables in your AWS environment.
+* For get & get all:
 
-Here's a summary of what happens when you use the Dynamoose code:
+![Alt text](image.png)
 
-You define the schema for the "Book" entity using Dynamoose.
-When you use dynamoose.model('Book', bookSchema);, it creates a model that represents the DynamoDB table based on the schema.
-The first time you perform any operation (e.g., saving a book, querying for books) using the model, Dynamoose will automatically create the table for you in DynamoDB if it doesn't already exist.
-Keep in mind that the table creation might take a few moments, and DynamoDB will provision the necessary resources based on the schema you defined. Once the table is created, you can use the model to interact with the table and perform CRUD operations seamlessly.
+* Post:
+
+![Alt text](image-2.png)
+
+
+* Put:
+
+![Alt text](image-1.png)
+
+* Delete:
+
+![Alt text](image-3.png)
+
+----
+
+**What is the root URL to your API?**
+
+https://h7yhksyfkf.execute-api.us-east-1.amazonaws.com/people
+
+----
+
+**What are the routes?**
+
+* post, /people: post new person
+* get, /people/{id}: get one person
+* get, /people: get all persons
+* put, /people/{id}: update one person
+* delete, /people/{id}: delete one person
+
+
+----
+
+**What output do they return?**
+
+ * post: returns the new added object 
+ * put: returns the updated object 
+
+ * get all: returns the all the objects added (All persons)
+* get by id: returns one object (one person, based on the id)
+ * delete:  deletes the selected object and returns this message: 'Person deleted successfully'
